@@ -7,9 +7,9 @@ import { permissionsContext } from '../context/PermissionsContext';
 import { UserStackNavigation } from './UserStackNavigation';
 
 export type RootBottomTabParams = {
-    Client: undefined;
-    Perfil: undefined;
-    Logout: undefined;
+    Clientes: undefined;
+    Productos: undefined;
+    Salir: undefined;
   };
 
 const Tab = createMaterialBottomTabNavigator<RootBottomTabParams>();
@@ -24,30 +24,30 @@ export const BottomTabsNavigation = () => {
 
   return (
     <Tab.Navigator
-        initialRouteName="Client"
+        initialRouteName="Clientes"
         activeColor="#3c3c44"
         inactiveColor="#777"
         barStyle={{ backgroundColor: '#04acb4' }}
     >
       <Tab.Screen 
-      name="Client" 
+      name="Clientes" 
       component={UserStackNavigation} 
       options={{
         tabBarIcon: ({ color }) => (
-          <Icon name="home" color={color} size={26} />
+          <Icon name="store" color={color} size={26} />
         ),
       }}
       />
       <Tab.Screen 
-        name="Perfil" 
+        name="Productos" 
         component={ProfileScreen} 
         options={{
             tabBarIcon: ({ color }) => (
-              <Icon name="account" color={color} size={26} />
+              <Icon name="shopping" color={color} size={26} />
             ),
         }}
         />
-        <Tab.Screen name="Logout" component={LogoutComponent} 
+        <Tab.Screen name="Salir" component={LogoutComponent} 
             options={{
                 tabBarIcon: ({ color }) => (
                   <Icon name="power" color={color} size={26} />

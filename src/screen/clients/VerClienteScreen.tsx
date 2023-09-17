@@ -78,7 +78,7 @@ export const VerClienteScreen = ({navigation,route}:Props) => {
                 icon="eye"
                 iconColor={'#04acb4'}
                 size={20}
-                onPress={() => console.log('Pressed')}
+                onPress={() => navigation.navigate('VerOrden',{id:item.id,orden:item.orden, total:item.monto})}
             />
             </DataTable.Cell>
         </DataTable.Row>
@@ -106,7 +106,7 @@ export const VerClienteScreen = ({navigation,route}:Props) => {
             style={{position:'absolute',right:10, bottom:10, backgroundColor:'#04acb4'}}
             mode='contained'
             size={40}
-            onPress={() => console.log('Pressed')}
+            onPress={() => navigation.navigate('NuevaOrden')}
         />
     </View>
   )
